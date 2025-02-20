@@ -16,6 +16,9 @@ const config: StorybookConfig = {
     name: "@storybook/react-webpack5",
     options: {},
   },
+  docs: {
+    defaultName: 'Documentation',
+  },
 };
 
 export default config;
