@@ -135,9 +135,23 @@ body {
   opacity: 0.8;
 }
 
-.cmp-card__image {
+.cmp-card__image-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+}
+
+.cmp-card__image,
+.cmp-card__image-skeleton {
   width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: 200%;
+
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.cmp-card__image-skeleton {
+  background-color: #e0e6ed;
 }
