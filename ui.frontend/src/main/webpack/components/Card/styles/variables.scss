@@ -3,10 +3,6 @@
   --color-primary: #007bff;
   --color-secondary: #6c757d;
   --color-tertiary: #5d5fef;
-  --color-success: #28a745;
-  --color-danger: #dc3545;
-  --color-warning: #ffc107;
-  --color-info: #17a2b8;
   --color-light: #fff;
   --color-dark: #343a40;
 
@@ -15,10 +11,6 @@
   --color-light-dark: #343a40;
   --surface-color: var(--color-tertiary);
   --surface-color-secondary: var(--color-light);
-  --surface-color-hover: #f8f9fa;
-  --surface-color-active: #e9ecef;
-  --surface-color-focus: #f8f9fa;
-  --surface-color-disabled: #f8f9fa;
   --surface-color-border: #3437f1;
 
   --text-color-primary: #fff;
@@ -48,24 +40,15 @@ $spacing-xlarge: 2rem;
 $spacing-xxlarge: 2.5rem;
 
 $surface-color: var(--surface-color);
-$surface-color-hover: var(--surface-color-hover);
-$surface-color-active: var(--surface-color-active);
-$surface-color-focus: var(--surface-color-focus);
-$surface-color-disabled: var(--surface-color-disabled);
 $surface-color-border: var(--surface-color-border);
 
 $text-color-primary: var(--color-primary);
 $text-color-secondary: var(--color-secondary);
-$text-color-success: var(--color-success);
-$text-color-danger: var(--color-danger);
-$text-color-warning: var(--color-warning);
-$text-color-info: var(--color-info);
 $text-color-light: var(--color-light);
 $text-color-dark: var(--color-dark);
 
 $font-family-primary: "Roboto", sans-serif;
 $font-family-secondary: "Open Sans", sans-serif;
-$font-family-tertiary: "Montserrat", sans-serif;
 
 $gap-small: 0.5rem;
 $gap-medium: 1rem;
