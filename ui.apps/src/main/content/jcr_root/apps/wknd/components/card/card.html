@@ -1,0 +1,28 @@
+<!--/* card.html */-->
+<div
+  class="cmp-card light ${properties.variant}"
+  data-sly-test.hasContent="${!properties.title}"
+  data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+>
+  <div class="cmp-card__content">
+    <div class="cmp-card__image-container">
+      <div class="cmp-card__image-skeleton"></div>
+      <div
+        class="cmp-card__image"
+        alt="${properties.title}"
+        data-sly-resource="${resource.path @ resourceType = 'core/wcm/components/image/v2/image', cssClassName='cmp-card__image'}"
+      ></div>
+    </div>
+    <div class="cmp-card__inner">
+      <div class="cmp-card__header">
+        <h2 class="cmp-card__name typo-secondary typo-color-primary">${properties.name}</h2>
+        <p class="cmp-card__roles typo-secondary typo-color-primary">${properties.occupations}</p>
+        <p class="cmp-card__rating typo-secondary">${properties.rating}</p>
+      </div>
+      <div class="cmp-card__description">
+        <p class="typo-secondary typo-color-primary">${properties.description}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
