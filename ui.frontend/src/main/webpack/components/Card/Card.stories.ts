@@ -15,7 +15,6 @@ const meta = {
     layout: 'centered',
     design: parameters({ url: figmaUrl }).design,
   },
-  tags: ['autodocs'],
   argTypes: {
     // backgroundColor: { control: 'color' },
   },
