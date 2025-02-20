@@ -2,14 +2,18 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Card } from './Card';
 
+import { parameters } from '../../../../../.storybook/stories_config';
+const figmaUrl = 'https://www.figma.com/design/wTzU9RR9oKfNvyet4LG9It/Cards-(Community)?node-id=1-773';
+
+
 const meta = {
   title: 'Components/Card',
   component: Card,
   parameters: {
     layout: 'centered',
+    design: parameters({ url: figmaUrl }).design,
   },
   tags: ['autodocs'],
-
   argTypes: {
     // backgroundColor: { control: 'color' },
   },
@@ -24,7 +28,8 @@ export const Primary: Story = {
     title: 'Nahid Hasan',
     roles: ['UX/UI Designer'],
     image: 'https://picsum.photos/id/237/200/200',
-    description: ['UI is the saddle, the stirrups, & the reins. UX is the feeling you get being able to ride the horse.'],
+    description: ['UI is the saddle, the stirrups, & the reins. UX is the feeling you get being able to ride the horse.'
+    ],
   },
 };
 
