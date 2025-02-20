@@ -10,7 +10,8 @@ const config: StorybookConfig = {
     "@storybook/addon-interactions",
     'storybook-addon-sass-postcss',
     "@storybook/addon-designs",
-    "@storybook/theming"
+    "@storybook/theming",
+    "@whitespace/storybook-addon-html",
   ],
   framework: {
     name: "@storybook/react-webpack5",
