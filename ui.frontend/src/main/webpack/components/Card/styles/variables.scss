@@ -1,0 +1,57 @@
+:root {
+  /* Light theme colors */
+  --color-primary: #007bff;
+  --color-secondary: #6c757d;
+  --color-tertiary: #5d5fef;
+  --color-light: #fff;
+  --color-dark: #343a40;
+
+  /* Dark theme colors */
+  --color-primary-dark: #1e90ff;
+  --color-light-dark: #343a40;
+  --surface-color: var(--color-tertiary);
+  --surface-color-secondary: var(--color-light);
+  --surface-color-border: #3437f1;
+
+  --text-color-primary: #fff;
+  --text-color-secondary: var(--color-tertiary);
+}
+
+.dark {
+  --color-primary: #fff;
+  --color-dark: #fff;
+  --surface-color: var(--color-light);
+  --surface-color-border: #e0e6ed;
+  --text-color-primary: #3b3f5c;
+  --surface-color-secondary: var(--color-tertiary);
+  --text-color-secondary: var(--color-light);
+}
+
+$font-size-small: 0.75rem;
+$font-size-medium: 1rem;
+$font-size-large: 1.25rem;
+$font-size-xlarge: 1.5rem;
+$font-size-xxlarge: 2rem;
+
+$spacing-small: 0.5rem;
+$spacing-medium: 1rem;
+$spacing-large: 1.5rem;
+$spacing-xlarge: 2rem;
+$spacing-xxlarge: 2.5rem;
+
+$surface-color: var(--surface-color);
+$surface-color-border: var(--surface-color-border);
+
+$text-color-primary: var(--color-primary);
+$text-color-secondary: var(--color-secondary);
+$text-color-light: var(--color-light);
+$text-color-dark: var(--color-dark);
+
+$font-family-primary: "Roboto", sans-serif;
+$font-family-secondary: "Open Sans", sans-serif;
+
+$gap-small: 0.5rem;
+$gap-medium: 1rem;
+$gap-large: 1.5rem;
+$gap-xlarge: 2rem;
+$gap-xxlarge: 2.5rem;

@@ -1,0 +1,25 @@
+.cmp-card.horizontal {
+  @media (min-width: 768px) {
+    max-width: 768px;
+
+    .cmp-card__content {
+      flex-direction: row;
+      gap: $gap-xlarge;
+    }
+
+    .cmp-card__image-container {
+      width: 160px;
+      height: 160px;
+      flex-shrink: 0;
+    }
+
+    .cmp-card__inner {
+      gap: $gap-xlarge;
+    }
+
+    .cmp-card__header,
+    .cmp-card__description {
+      text-align: left;
+    }
+  }
+}
