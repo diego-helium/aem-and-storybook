@@ -25,7 +25,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Vertical: Story = {
   args: {
     variant: 'vertical',
     theme: 'light',
@@ -37,9 +37,9 @@ export const Primary: Story = {
   },
 };
 
-export const Light: Story = {
+export const VerticalLight: Story = {
   args: {
-    ...Primary.args,
+    ...Vertical.args,
     theme: 'dark',
   },
   parameters: {
@@ -50,7 +50,7 @@ export const Light: Story = {
 
 export const NoImage: Story = {
   args: {
-    ...Primary.args,
+    ...Vertical.args,
     title: 'No Image',
     image: undefined,
     roles: ['Ex-rich'],
@@ -60,7 +60,33 @@ export const NoImage: Story = {
 
 export const Horizontal: Story = {
   args: {
-    ...Primary.args,
+    ...Vertical.args,
     variant: 'horizontal',
   },
 };
+
+export const HorizontalLight: Story = {
+  args: {
+    ...Horizontal.args,
+    theme: 'dark',
+  },
+};
+
+
+export const HorizontalWithRating: Story = {
+  args: {
+    ...Horizontal.args,
+    rating: 4.5,
+  },
+};
+
+
+
+export const HorizontalWithRatingLight: Story = {
+  args: {
+    ...HorizontalWithRating.args,
+    theme: 'dark',
+  },
+};
+
+

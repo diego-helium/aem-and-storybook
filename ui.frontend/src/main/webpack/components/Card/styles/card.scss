@@ -64,7 +64,8 @@ body {
   font-weight: 700;
 }
 
-.cmp-card__roles {
+.cmp-card__roles,
+.cmp-card__rating {
   font-size: $font-size-xlarge;
   font-weight: 600;
   opacity: 0.5;
@@ -85,6 +86,15 @@ body {
 .cmp-card__inner {
   display: flex;
   flex-direction: column;
-  // align-items: center;
   gap: $gap-large;
+}
+
+.cmp-card__rating {
+  display: inline-block;
+  padding-inline: $spacing-medium;
+  margin-top: $spacing-small;
+  background: var(--surface-color-secondary);
+  color: var(--text-color-secondary);
+  border-radius: 200px;
+  opacity: 1;
 }

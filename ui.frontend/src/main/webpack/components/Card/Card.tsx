@@ -9,6 +9,7 @@ export interface CardProps {
   image?: string;
   theme: "light" | "dark";
   variant: "horizontal" | "vertical";
+  rating?: number;
 }
 
 export const Card = ({
@@ -18,6 +19,7 @@ export const Card = ({
   image,
   theme = "light",
   variant = "vertical",
+  rating,
 }: CardProps) => {
   return (
     <div className={`cmp-card ${theme} ${variant}`}>
@@ -30,6 +32,7 @@ export const Card = ({
           <div className="cmp-card__header">
             <h2 className="cmp-card__name typo-secondary typo-color-primary">{title}</h2>
             <p className="cmp-card__roles typo-secondary typo-color-primary">{roles?.join(", ")}</p>
+            {rating && <p className="cmp-card__rating typo-secondary ">{rating}</p>}
           </div>
           <div className="cmp-card__description">
             {description?.map((item, index) => (
