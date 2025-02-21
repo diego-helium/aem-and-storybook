@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22.12.0
-          workingDir: /ui.frontend
+          working-directory: ./ui.frontend
       - name: Print current working directory
         run: echo $(pwd)
       - name: Install dependencies
@@ -26,4 +26,4 @@ jobs:
         with:
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          workingDir: /ui.frontend
+           working-directory: ./ui.frontend
