@@ -28,7 +28,7 @@ export const Vertical: Story = {
   args: {
     variant: 'vertical',
     theme: 'light',
-    title: 'Nahid Hasan',
+    name: 'Nahid Hasan',
     roles: ['UX/UI Designer'],
     image: nahidPhoto,
     description: ['UI is the saddle, the stirrups, & the reins. UX is the feeling you get being able to ride the horse.'
@@ -50,7 +50,7 @@ export const VerticalLight: Story = {
 export const NoImage: Story = {
   args: {
     ...Vertical.args,
-    title: 'No Image',
+    name: 'No Image',
     image: undefined,
     roles: ['Ex-rich'],
     description: ['Never worked a day in my life. Can you believe that? Need to get a job, help!'],
