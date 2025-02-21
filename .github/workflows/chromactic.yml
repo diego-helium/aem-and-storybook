@@ -15,6 +15,8 @@ jobs:
         with:
           node-version: 22.12.0
           workingDir: aem-guides-wknd/ui.frontend
+      - name: Print current working directory
+        run: echo $(pwd)
       - name: Install dependencies
         # ⚠️ See your package manager's documentation for the correct command to install dependencies in a CI environment.
         run: npm ci
