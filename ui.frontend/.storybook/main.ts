@@ -13,7 +13,9 @@ const config: StorybookConfig = {
     "@storybook/theming",
     "@whitespace/storybook-addon-html",
     "@storybook/addon-a11y",
+    "storybook-addon-pseudo-states"
   ],
+
   framework: {
     name: "@storybook/react-webpack5",
     options: {},
