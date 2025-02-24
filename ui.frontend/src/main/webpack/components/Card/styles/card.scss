@@ -7,6 +7,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.typo-secondary {
+  font-family: $font-family-secondary;
+  line-height: 1.6;
+  letter-spacing: 0.14px;
+}
+
+.typo-color-primary {
+  color: var(--text-color-primary);
+}
+
+.transition-all-1 {
+  transition: all 1s ease;
+}
+
 .cmp-card {
   width: 100%;
   max-width: 400px;
@@ -17,8 +31,18 @@ body {
   border: 2px solid $surface-color-border;
   box-shadow: 0px 7px 14px 0px rgba(0, 0, 0, 0.1);
 
+  cursor: pointer;
+
   & * {
     box-sizing: border-box;
+  }
+
+  &:hover {
+    background-color: $surface-color-hover;
+  }
+
+  &:hover .typo-color-primary {
+    color: $text-color-hover;
   }
 }
 
@@ -57,16 +81,6 @@ body {
 .cmp-card__header,
 .cmp-card__description {
   text-align: center;
-}
-
-.typo-secondary {
-  font-family: $font-family-secondary;
-  line-height: 1.6;
-  letter-spacing: 0.14px;
-}
-
-.typo-color-primary {
-  color: var(--text-color-primary);
 }
 
 .cmp-card__name {

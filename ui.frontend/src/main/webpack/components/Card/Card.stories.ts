@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { userEvent, within } from '@storybook/test';
 
 import { Card } from './Card';
+import { initCard } from './script';
 
 import { parameters } from '../../../../../.storybook/stories_config';
 const figmaUrl = 'https://www.figma.com/design/wTzU9RR9oKfNvyet4LG9It/Cards-(Community)?node-id=1-773';
@@ -34,6 +36,12 @@ export const Vertical: Story = {
     description: ['UI is the saddle, the stirrups, & the reins. UX is the feeling you get being able to ride the horse.'
     ],
   },
+  play: async ({ canvasElement }) => {
+    await initCard();
+    const canvas = within(canvasElement);
+    userEvent.hover(await canvas.findByRole('article'));
+
+  },
 };
 
 export const VerticalLight: Story = {
@@ -44,6 +52,16 @@ export const VerticalLight: Story = {
   parameters: {
     ...meta.parameters,
     design: parameters({ url: figmaUrlLight }).design,
+  },
+};
+
+export const VerticalHover: Story = {
+  args: {
+    ...Vertical.args,
+  },
+  parameters: {
+    ...meta.parameters,
+    pseudo: { hover: true }
   },
 };
 
@@ -79,13 +97,12 @@ export const HorizontalWithRating: Story = {
   },
 };
 
-
-
 export const HorizontalWithRatingLight: Story = {
   args: {
     ...HorizontalWithRating.args,
     theme: 'dark',
   },
 };
+
 
 

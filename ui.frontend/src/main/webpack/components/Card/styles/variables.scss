@@ -11,20 +11,27 @@
   --color-light-dark: #343a40;
   --surface-color: var(--color-tertiary);
   --surface-color-secondary: var(--color-light);
+  --surface-color-hover: var(--color-light);
   --surface-color-border: #3437f1;
 
   --text-color-primary: #fff;
   --text-color-secondary: var(--color-tertiary);
+  --text-color-hover: var(--color-light-dark);
 }
 
 .dark {
   --color-primary: #fff;
   --color-dark: #fff;
+
+  --text-color-primary: #3b3f5c;
+  --text-color-secondary: var(--color-light);
+
   --surface-color: var(--color-light);
   --surface-color-border: #e0e6ed;
-  --text-color-primary: #3b3f5c;
   --surface-color-secondary: var(--color-tertiary);
-  --text-color-secondary: var(--color-light);
+  --surface-color-hover: var(--color-primary-dark);
+
+  --text-color-hover: var(--color-light);
 }
 
 $font-size-small: 0.75rem;
@@ -40,12 +47,14 @@ $spacing-xlarge: 2rem;
 $spacing-xxlarge: 2.5rem;
 
 $surface-color: var(--surface-color);
+$surface-color-hover: var(--surface-color-hover);
 $surface-color-border: var(--surface-color-border);
 
 $text-color-primary: var(--color-primary);
 $text-color-secondary: var(--color-secondary);
 $text-color-light: var(--color-light);
 $text-color-dark: var(--color-dark);
+$text-color-hover: var(--text-color-hover);
 
 $font-family-primary: "Roboto", sans-serif;
 $font-family-secondary: "Open Sans", sans-serif;
