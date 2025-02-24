@@ -10,35 +10,36 @@
   --color-primary-dark: #1e90ff;
   --color-light-dark: #343a40;
 
+  /* Text colors */
   --text-color-primary: #fff;
   --text-color-secondary: var(--color-tertiary);
   --text-color-hover: var(--color-light-dark);
 
+  /* Surface colors */
   --surface-color: var(--color-tertiary);
   --surface-color-hover: var(--color-light);
-
   --surface-color-secondary: var(--color-light);
   --surface-color-secondary-hover: var(--color-tertiary);
-
   --surface-color-border: #3437f1;
   --surface-color-border-hover: #3437f1;
 }
 
 .dark {
+  /* Dark theme colors */
   --color-primary: #fff;
   --color-dark: #fff;
 
+  /* Text colors */
   --text-color-primary: #3b3f5c;
   --text-color-primary-hover: #3b3f5c;
   --text-color-secondary: var(--color-light);
   --text-color-secondary-hover: var(--color-light);
 
+  /* Surface colors */
   --surface-color: var(--color-light);
   --surface-color-hover: var(--color-tertiary);
-
   --surface-color-secondary: var(--color-tertiary);
   --surface-color-secondary-hover: var(--color-light);
-
   --surface-color-border: #e0e6ed;
   --surface-color-border-hover: #3437f1;
 }
