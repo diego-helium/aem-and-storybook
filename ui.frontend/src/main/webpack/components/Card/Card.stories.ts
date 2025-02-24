@@ -40,7 +40,6 @@ export const Vertical: Story = {
     await initCard();
     const canvas = within(canvasElement);
     userEvent.hover(await canvas.findByRole('article'));
-
   },
 };
 
