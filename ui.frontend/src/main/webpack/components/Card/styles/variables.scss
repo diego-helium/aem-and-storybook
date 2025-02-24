@@ -9,22 +9,43 @@
   /* Dark theme colors */
   --color-primary-dark: #1e90ff;
   --color-light-dark: #343a40;
-  --surface-color: var(--color-tertiary);
-  --surface-color-secondary: var(--color-light);
-  --surface-color-border: #3437f1;
 
+  /* Text colors */
   --text-color-primary: #fff;
   --text-color-secondary: var(--color-tertiary);
+  --text-color-hover: var(--color-light-dark);
+
+  --text-color-tertiary: var(--color-tertiary);
+
+  /* Surface colors */
+  --surface-color: var(--color-tertiary);
+  --surface-color-hover: var(--color-light);
+  --surface-color-secondary: var(--color-light);
+  --surface-color-secondary-hover: var(--color-tertiary);
+  --surface-color-border: #3437f1;
+  --surface-color-border-hover: #3437f1;
 }
 
 .dark {
+  /* Dark theme colors */
   --color-primary: #fff;
   --color-dark: #fff;
-  --surface-color: var(--color-light);
-  --surface-color-border: #e0e6ed;
+
+  /* Text colors */
   --text-color-primary: #3b3f5c;
-  --surface-color-secondary: var(--color-tertiary);
+  --text-color-primary-hover: #3b3f5c;
   --text-color-secondary: var(--color-light);
+  --text-color-secondary-hover: var(--color-light);
+
+  --text-color-tertiary: var(--color-light);
+
+  /* Surface colors */
+  --surface-color: var(--color-light);
+  --surface-color-hover: var(--color-tertiary);
+  --surface-color-secondary: var(--color-tertiary);
+  --surface-color-secondary-hover: var(--color-light);
+  --surface-color-border: #e0e6ed;
+  --surface-color-border-hover: #3437f1;
 }
 
 $font-size-small: 0.75rem;
@@ -40,12 +61,23 @@ $spacing-xlarge: 2rem;
 $spacing-xxlarge: 2.5rem;
 
 $surface-color: var(--surface-color);
+$surface-color-hover: var(--surface-color-hover);
 $surface-color-border: var(--surface-color-border);
+$surface-color-border-hover: var(--surface-color-border-hover);
 
-$text-color-primary: var(--color-primary);
-$text-color-secondary: var(--color-secondary);
+$surface-color-secondary: var(--surface-color-secondary);
+$surface-color-secondary-hover: var(--surface-color-secondary-hover);
+
 $text-color-light: var(--color-light);
 $text-color-dark: var(--color-dark);
+
+$text-color-primary: var(--color-primary);
+$text-color-primary-hover: var(--text-color-secondary-hover);
+
+$text-color-secondary: var(--color-secondary);
+$text-color-secondary-hover: var(--surface-color-secondary);
+
+$text-color-tertiary: var(--color-tertiary);
 
 $font-family-primary: "Roboto", sans-serif;
 $font-family-secondary: "Open Sans", sans-serif;

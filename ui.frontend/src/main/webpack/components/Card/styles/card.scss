@@ -7,18 +7,57 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.bg-primary {
+  background-color: var(--surface-color);
+}
+
+.typo-secondary {
+  font-family: $font-family-secondary;
+  line-height: 1.6;
+  letter-spacing: 0.14px;
+}
+
+.typo-color-primary {
+  color: var(--text-color-primary);
+}
+
+.typo-color-secondary {
+  color: var(--text-color-secondary);
+}
+
+.transition-all-1 {
+  transition: all 1s ease;
+}
+
 .cmp-card {
   width: 100%;
   max-width: 400px;
   padding: $spacing-xxlarge $spacing-xlarge $spacing-xlarge $spacing-xlarge;
   box-sizing: border-box;
-  background-color: var(--surface-color);
   border-radius: 12px;
   border: 2px solid $surface-color-border;
   box-shadow: 0px 7px 14px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 
-  & * {
-    box-sizing: border-box;
+  &:hover.bg-primary {
+    background-color: $surface-color-hover;
+    border-color: $surface-color-border-hover;
+  }
+
+  &:hover .typo-color-primary {
+    color: $text-color-primary-hover;
+  }
+
+  &:hover .typo-color-secondary {
+    color: $text-color-secondary-hover;
+  }
+
+  &:hover .bg-secondary {
+    background: $surface-color-secondary-hover;
   }
 }
 
@@ -59,16 +98,6 @@ body {
   text-align: center;
 }
 
-.typo-secondary {
-  font-family: $font-family-secondary;
-  line-height: 1.6;
-  letter-spacing: 0.14px;
-}
-
-.typo-color-primary {
-  color: var(--text-color-primary);
-}
-
 .cmp-card__name {
   font-size: $font-size-xxlarge;
   font-weight: 700;
@@ -103,8 +132,11 @@ body {
   display: inline-block;
   padding-inline: $spacing-medium;
   margin-top: $spacing-small;
-  background: var(--surface-color-secondary);
   color: var(--text-color-secondary);
   border-radius: 200px;
   opacity: 1;
+}
+
+.bg-secondary {
+  background: var(--surface-color-secondary);
 }
