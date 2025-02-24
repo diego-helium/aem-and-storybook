@@ -12,7 +12,8 @@ const config: StorybookConfig = {
     "@storybook/theming",
     "@whitespace/storybook-addon-html",
     "@storybook/addon-a11y",
-    "storybook-addon-pseudo-states"
+    "storybook-addon-pseudo-states",
+    "@storybook/addon-coverage"
   ],
 
   framework: {
