@@ -1,24 +1,30 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import { expect, userEvent, within } from '@storybook/test';
 
 import { Button } from './Button';
+import { initButton } from './script';
+
+const play = async ({ canvasElement }: { canvasElement: HTMLElement }) => {
+  initButton();
+  const canvas = within(canvasElement);
+  const button = canvas.getByRole('button', { name: /learn more/i });
+  await userEvent.click(button);
+  expect(button).toHaveClass('button-copied-text');
+  expect(button).toHaveTextContent('Copied!');
+};
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Components/Button',
   component: Button,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  argTypes: {},
+  args: { label: 'Learn More' },
+  play: async () => {
+    initButton();
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -28,26 +34,61 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: 'Button',
+    layout: 'content-width',
   },
+};
+
+export const PrimaryFocusState: Story = {
+  args: {
+    ...Primary.args,
+  },
+  parameters: {
+    ...meta.parameters,
+    pseudo: { focus: true }
+  },
+};
+
+export const PrimaryHoverState: Story = {
+  args: {
+    ...Primary.args,
+  },
+  parameters: {
+    ...meta.parameters,
+    pseudo: { hover: true }
+  },
+};
+
+export const PrimaryWithInteraction: Story = {
+  args: {
+    ...Primary.args,
+    layout: 'full-width',
+  },
+  play: play,
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Button',
+    primary: false,
+    label: 'Learn More',
   },
 };
 
-export const Large: Story = {
+export const SecondaryHoverState: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    ...Secondary.args,
+  },
+  parameters: {
+    ...meta.parameters,
+    pseudo: { hover: true }
   },
 };
 
-export const Small: Story = {
+export const SecondaryFullWidth: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
+    ...Secondary.args,
+    layout: 'full-width',
   },
+  play: play,
 };
+
+

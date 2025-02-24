@@ -1,0 +1,48 @@
+@use "../../Card/styles/variables.scss" as *;
+
+.button {
+  display: inline-block;
+  padding: $spacing-medium $spacing-large;
+  cursor: pointer;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  background-color: transparent;
+
+  font-family: $font-family-secondary;
+  font-size: $font-size-xlarge;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.14px;
+  transition: all 0.3s ease-in;
+
+  &.button-copied-text.button--primary,
+  &:not(.button-copied-text).button--primary:hover {
+    color: var(--color-light);
+    background-color: $surface-color;
+  }
+
+  &.button-copied-text.button--secondary,
+  &:not(.button-copied-text).button--secondary:hover {
+    color: $text-color-tertiary;
+    background-color: $surface-color-secondary;
+  }
+}
+
+.button--primary {
+  color: $text-color-tertiary;
+  background-color: $surface-color-secondary;
+}
+
+.button--secondary {
+  color: var(--color-light);
+  background-color: $surface-color;
+}
+
+.button--full-width {
+  width: 100%;
+}
+
+.button--content-width {
+  width: fit-content;
+}

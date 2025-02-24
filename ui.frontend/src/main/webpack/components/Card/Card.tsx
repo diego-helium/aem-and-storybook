@@ -22,7 +22,7 @@ export const Card = ({
   rating,
 }: CardProps) => {
   return (
-    <div className={`cmp-card ${theme} ${variant}`}>
+    <article className={`cmp-card bg-primary  transition-all-1 ${theme} ${variant}`}>
       <div className="cmp-card__content">
         <div className="cmp-card__image-container">
           <div className="cmp-card__image-skeleton" />
@@ -36,19 +36,27 @@ export const Card = ({
         </div>
         <div className="cmp-card__inner">
           <div className="cmp-card__header">
-            <h2 className="cmp-card__name typo-secondary typo-color-primary">{name}</h2>
-            <p className="cmp-card__roles typo-secondary typo-color-primary">{roles?.join(", ")}</p>
-            {rating && <p className="cmp-card__rating typo-secondary ">{rating}</p>}
+            <h2 className="cmp-card__name typo-secondary typo-color-primary transition-all-1">
+              {name}
+            </h2>
+            <p className="cmp-card__roles typo-secondary typo-color-primary transition-all-1">
+              {roles?.join(", ")}
+            </p>
+            {rating && (
+              <p className="cmp-card__rating typo-secondary typo-color-secondary transition-all-1 bg-secondary">
+                {rating}
+              </p>
+            )}
           </div>
           <div className="cmp-card__description">
             {description?.map((item, index) => (
-              <p key={index} className="typo-secondary typo-color-primary">
+              <p key={index} className="typo-secondary typo-color-primary transition-all-1">
                 {item}
               </p>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
