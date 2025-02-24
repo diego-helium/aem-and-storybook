@@ -22,7 +22,7 @@ export const Card = ({
   rating,
 }: CardProps) => {
   return (
-    <article className={`cmp-card ${theme} ${variant} transition-all-1`}>
+    <article className={`cmp-card bg-primary  transition-all-1 ${theme} ${variant}`}>
       <div className="cmp-card__content">
         <div className="cmp-card__image-container">
           <div className="cmp-card__image-skeleton" />
@@ -42,7 +42,11 @@ export const Card = ({
             <p className="cmp-card__roles typo-secondary typo-color-primary transition-all-1">
               {roles?.join(", ")}
             </p>
-            {rating && <p className="cmp-card__rating typo-secondary transition-all-1">{rating}</p>}
+            {rating && (
+              <p className="cmp-card__rating typo-secondary typo-color-secondary transition-all-1 bg-secondary">
+                {rating}
+              </p>
+            )}
           </div>
           <div className="cmp-card__description">
             {description?.map((item, index) => (
