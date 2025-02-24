@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import { themes } from "@storybook/theming";
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 const preview: Preview = {
   parameters: {
@@ -11,6 +12,9 @@ const preview: Preview = {
     },
     docs: {
       theme: themes.dark,
+    },
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
     },
   },
   tags: ['autodocs'],
