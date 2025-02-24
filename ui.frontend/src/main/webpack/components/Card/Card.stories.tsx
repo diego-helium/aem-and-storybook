@@ -1,20 +1,23 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { userEvent, within } from '@storybook/test';
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/test";
 
-import { Card } from './Card';
-import { initCard } from './script';
+import { Card } from "./Card";
+import { initCard } from "./script";
 
-import { parameters } from '../../../../../.storybook/stories_config';
-const figmaUrl = 'https://www.figma.com/design/wTzU9RR9oKfNvyet4LG9It/Cards-(Community)?node-id=1-773';
-const figmaUrlLight = 'https://www.figma.com/design/wTzU9RR9oKfNvyet4LG9It/Cards-(Community)?node-id=1-766&t=VU5P5HyJGAiIr7Fe-4';
+import { parameters } from "../../../../../.storybook/stories_config";
+const figmaUrl =
+  "https://www.figma.com/design/wTzU9RR9oKfNvyet4LG9It/Cards-(Community)?node-id=1-773";
+const figmaUrlLight =
+  "https://www.figma.com/design/wTzU9RR9oKfNvyet4LG9It/Cards-(Community)?node-id=1-766&t=VU5P5HyJGAiIr7Fe-4";
 
 import nahidPhoto from "../../../../stories/assets/nahid_photo.jpg";
 
 const meta = {
-  title: 'Components/Card',
+  title: "Components/Card",
   component: Card,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     design: parameters({ url: figmaUrl }).design,
   },
   argTypes: {
@@ -28,25 +31,33 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Vertical: Story = {
   args: {
-    variant: 'vertical',
-    theme: 'light',
-    name: 'Nahid Hasan',
-    roles: ['UX/UI Designer'],
+    variant: "vertical",
+    theme: "light",
+    name: "Nahid Hasan",
+    roles: ["UX/UI Designer"],
     image: nahidPhoto,
-    description: ['UI is the saddle, the stirrups, & the reins. UX is the feeling you get being able to ride the horse.'
+    description: [
+      "UI is the saddle, the stirrups, & the reins. UX is the feeling you get being able to ride the horse.",
     ],
   },
+  decorators: [
+    (Story) => (
+      <div className="card">
+        <Story />
+      </div>
+    ),
+  ],
   play: async ({ canvasElement }) => {
     await initCard();
     const canvas = within(canvasElement);
-    userEvent.hover(await canvas.findByRole('article'));
+    userEvent.hover(await canvas.findByRole("article"));
   },
 };
 
 export const VerticalLight: Story = {
   args: {
     ...Vertical.args,
-    theme: 'dark',
+    theme: "dark",
   },
   parameters: {
     ...meta.parameters,
@@ -60,34 +71,33 @@ export const VerticalHover: Story = {
   },
   parameters: {
     ...meta.parameters,
-    pseudo: { hover: true }
+    pseudo: { hover: true },
   },
 };
 
 export const NoImage: Story = {
   args: {
     ...Vertical.args,
-    name: 'No Image',
+    name: "No Image",
     image: undefined,
-    roles: ['Ex-rich'],
-    description: ['Never worked a day in my life. Can you believe that? Need to get a job, help!'],
+    roles: ["Ex-rich"],
+    description: ["Never worked a day in my life. Can you believe that? Need to get a job, help!"],
   },
 };
 
 export const Horizontal: Story = {
   args: {
     ...Vertical.args,
-    variant: 'horizontal',
+    variant: "horizontal",
   },
 };
 
 export const HorizontalLight: Story = {
   args: {
     ...Horizontal.args,
-    theme: 'dark',
+    theme: "dark",
   },
 };
-
 
 export const HorizontalWithRating: Story = {
   args: {
@@ -99,9 +109,6 @@ export const HorizontalWithRating: Story = {
 export const HorizontalWithRatingLight: Story = {
   args: {
     ...HorizontalWithRating.args,
-    theme: 'dark',
+    theme: "dark",
   },
 };
-
-
-
