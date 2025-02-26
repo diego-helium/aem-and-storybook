@@ -1,7 +1,7 @@
 {
   "name": "aem-maven-archetype",
   "version": "1.0.0",
-  "homepage": "https://diego-helium.github.io/aem-guides-wknd",
+  "homepage": "./",
   "description": "Generates an AEM Frontend project with Webpack",
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
     "aemsyncro": "aemsync -w ../ui.apps/src/main/content",
     "watch": "npm-run-all --parallel start chokidar aemsyncro",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "storybook build -o ./docs",
     "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN",
     "test-storybook": "test-storybook --watch",
     "test-storybook-coverage": "test-storybook --coverage",
