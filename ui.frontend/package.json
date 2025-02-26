@@ -1,6 +1,7 @@
 {
   "name": "aem-maven-archetype",
   "version": "1.0.0",
+  "homepage": "https://diego-helium.github.io/aem-guides-wknd",
   "description": "Generates an AEM Frontend project with Webpack",
   "repository": {
     "type": "git",
@@ -21,7 +22,9 @@
     "build-storybook": "storybook build",
     "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN",
     "test-storybook": "test-storybook --watch",
-    "test-storybook-coverage": "test-storybook --coverage"
+    "test-storybook-coverage": "test-storybook --coverage",
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -58,6 +61,7 @@
     "eslint": "^8.4.1",
     "eslint-plugin-storybook": "^0.11.3",
     "eslint-webpack-plugin": "^3.1.1",
+    "gh-pages": "^6.3.0",
     "glob-import-loader": "^1.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.5",
