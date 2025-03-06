@@ -102,6 +102,13 @@ node/
 # Tests
 coverage/
 reports/
+ui.frontend/cypress/visual-test/*
+!ui.frontend/cypress/visual-test/.gitkeep
+
+ui.frontend/cypress-image-diff-html-report/*
+!ui.frontend/cypress-image-diff-html-report/.gitkeep
+
+
 
 # Others
 dispatcher/src/conf.d/variables/default.vars
