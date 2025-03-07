@@ -24,5 +24,6 @@ module.exports = {
     "func-style": ["error", "declaration", { allowArrowFunctions: true }],
     semi: 1,
     "no-var": 0,
+    "@typescript-eslint/no-namespace": 0,
   },
 };

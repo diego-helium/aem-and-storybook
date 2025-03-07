@@ -36,6 +36,16 @@
 //   }
 // }
 // cypress/support/{scheme}.ts, where {scheme} defaults to e2e
-import compareSnapshotCommand from 'cypress-image-diff-js/command';
+import 'cypress-image-diff-js';
 
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      compareSnapshot(name: string): Chainable<void>;
+    }
+  }
+}
+
+// Initialize the command
+import compareSnapshotCommand from 'cypress-image-diff-js/command';
 compareSnapshotCommand();
