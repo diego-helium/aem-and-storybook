@@ -4,6 +4,7 @@ jobs:
   visual-test:
     docker:
       - image: cypress/base:latest
+      app-dir: ./ui-frontend
     steps:
       - checkout
       - run:
