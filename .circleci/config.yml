@@ -1,37 +1,37 @@
 version: 2
 
-  jobs:
-    visual-test:
-      docker:
-        - image: cypress/base:latest
-      working_directory: .
-      steps:
-        - checkout
-        - run:
-            name: Install Dependencies and Required Libraries
-            command: |
-              npm install
-              apt-get update && apt-get install -y \
-                libgtk2.0-0 \
-                libgtk-3-0 \
-                libgbm-dev \
-                libnotify-dev \
-                libnss3 \
-                libxss1 \
-                libasound2 \
-                libxtst6 \
-                xauth \
-                xvfb
-        - run:
-            name: Run Tests
-            command: npm run test
-        - store_artifacts:
-            path: cypress-image-diff-screenshots
-        - store_artifacts:
-            path: cypress-image-diff-html-report
+jobs:
+  visual-test:
+    docker:
+      - image: cypress/base:latest
+    working_directory: .
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies and Required Libraries
+          command: |
+            npm install
+            apt-get update && apt-get install -y \
+              libgtk2.0-0 \
+              libgtk-3-0 \
+              libgbm-dev \
+              libnotify-dev \
+              libnss3 \
+              libxss1 \
+              libasound2 \
+              libxtst6 \
+              xauth \
+              xvfb
+      - run:
+          name: Run Tests
+          command: npm run test
+      - store_artifacts:
+          path: cypress-image-diff-screenshots
+      - store_artifacts:
+          path: cypress-image-diff-html-report
 
-  workflows:
-    version: 2
-    cypress-image-diff:
-      jobs:
-        - visual-test
+workflows:
+  version: 2
+  cypress-image-diff:
+    jobs:
+      - visual-test
