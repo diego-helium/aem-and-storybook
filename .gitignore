@@ -116,4 +116,3 @@ ui.tests/test-module/assets/form/themes/**/*diff.png
 ui.tests/test-module/assets/form/themes/**/*current.png
 *storybook.log
 .env
-ui.frontend/tests/screenshots/**/*.png
