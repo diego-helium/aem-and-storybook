@@ -6,4 +6,6 @@
 *.vars text
 *.any text
 magic text
+# Track all PNG files in the tests directory
+# /ui.frontend/tests/screenshots/**/*.png filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
