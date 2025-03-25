@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const pageUrl = 'https://diego-helium.github.io/aem-and-storybook/iframe.html?viewMode=story&id=';
+const pageUrl = '/iframe.html?viewMode=story&id=';
 
 test.beforeEach(async ({ page }) => {
   await page.setViewportSize({ width: 1920, height: 1080 });
