@@ -19,6 +19,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           lfs: true
+      - name: Check out LFS objects
+        run: git lfs checkout
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
