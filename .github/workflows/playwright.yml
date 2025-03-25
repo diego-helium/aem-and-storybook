@@ -10,30 +10,33 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ui.frontend
     container:
       image: mcr.microsoft.com/playwright:v1.49.0-jammy
     steps:
-      - uses: actions/checkout@v4
-        with:
-          lfs: true
       - name: Install git lfs
         run: |
           cd ../../..
           apt-get update 
           apt-get install git-lfs
           git lfs checkout
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd ui.frontend
+          npm install
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: |
+          cd ui.frontend
+          npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npx playwright test
+        run:  |
+          cd ui.frontend
+          npx playwright test
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
