@@ -16,14 +16,13 @@ jobs:
     container:
       image: mcr.microsoft.com/playwright:v1.49.0-jammy
     steps:
+      - uses: actions/checkout@v4
       - name: Install git lfs
         run: |
           cd ../../..
           apt-get update 
           apt-get install git-lfs
-      - uses: actions/checkout@v4
-        with:
-          lfs: "true"
+          git lfs checkout
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
