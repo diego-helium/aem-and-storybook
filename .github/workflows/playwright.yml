@@ -6,6 +6,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+env:
+  HOME: /root
+
 jobs:
   test:
     timeout-minutes: 60
@@ -33,7 +36,7 @@ jobs:
           cd ui.frontend
           npx playwright install --with-deps
       - name: Run Playwright tests
-        run:  |
+        run: |
           cd ui.frontend
           npx playwright test
       - uses: actions/upload-artifact@v4
