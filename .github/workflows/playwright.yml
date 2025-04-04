@@ -8,7 +8,20 @@ on:
 
 env:
   HOME: /root
-  UPDATE_SNAPSHOTS: false;
+  UPDATE_SNAPSHOTS: false
+
+workflow_call:
+  inputs:
+    update-snapshots:
+      description: "Update snapshots?"
+      type: boolean
+
+# Allow updating snapshots during automatic runs
+workflow_dispatch:
+  inputs:
+    update-snapshots:
+      description: "Update snapshots?"
+      type: boolean
 
 jobs:
   test:
@@ -37,13 +50,13 @@ jobs:
           cd ui.frontend
           npx playwright install --with-deps
       - name: Run Playwright tests
-        if: env.UPDATE_SNAPSHOTS == 'false'
+        if: inputs.update-snapshots == 'false'
         run: |
           cd ui.frontend
           npx playwright test
 
       - name: Update Playwright snapshots
-        if: env.UPDATE_SNAPSHOTS == 'true'
+        if: inputs.update-snapshots == 'true'
         run: |
           cd ui.frontend
           npx playwright test --update-snapshot
