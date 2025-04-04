@@ -2,6 +2,8 @@
 FROM mcr.microsoft.com/playwright:v1.37.0-focal
 # Set working directory inside the container
 WORKDIR /app
+
+
 # Copy package.json and package-lock.json for dependency installation
 
 COPY . ./
@@ -13,6 +15,12 @@ RUN npm ci
 # Install Playwright browsers (chromium, firefox, webkit)
 RUN npx playwright install --with-deps
 
+# Set environment variable with default value
+ENV UPDATE_SNAPSHOTS=""
 
-# Default command to run Storybook
-CMD ["npx", "playwright", "test"]
+# Default command to run Playwright tests
+CMD if [ "$UPDATE_SNAPSHOTS" = "true" ]; then \
+        npx playwright test --update-snapshots; \
+    else \
+        npx playwright test; \
+    fi
